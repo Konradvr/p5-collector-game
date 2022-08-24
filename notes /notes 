@@ -1,0 +1,27 @@
+/* 
+1. Background 
+1.1 background/js & main/js -> create draw function 
+1.2 game/js -> game class -> draw function -> constructor w/ this.background = new Background() 
+1.3 main/js in draw function -> game.draw() 
+1.4 game/js -> this.background.draw() 
+1.5 game/js -> create preload function 
+1.6 main/js -> game.preload 
+1.7 game/js -> constructor w/ this.backgroundImage(s)
+1.8 game/js -> preload -> this.backgroundImage(s) = [{src: "   ", x: ?, speed: ?}]
+1.9 background/js -> draw function -> image.backgroundImage(s).forEach(function(?){ 
+    1.9.1 img.x -= 1 -> maked the background moving from right to left  -> if uu wanna change speed of img moving to speed: ? -> change 1 to img.speed
+    1.9.2 image(img.src, img.x, 0, width, height) -> access to the backgroundIMG 
+    1.9.3 image(img.src, img.x + width, 0, width, height)  -> puts after the first backgroundIMG a second one 
+    1.9.4 if(img.x <= - width){
+                img.x = 0
+            }  -> this makes the images move but stays in the game 
+})
+
+2. Adding Player in the Game 
+2.1 player/js draw function 
+2.2 game/js constructor -> this.player = new Player() 
+2.3 game/js -> draw() -> this.player.draw() 
+2.4 game/js -> preload img/gif of player 
+2.5 player/js -> add img in draw function 
+2.6 constructor with this. x, y, width, height, velocity, gravity 
+*/ 
