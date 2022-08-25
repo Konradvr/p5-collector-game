@@ -1,5 +1,0 @@
-class BackgroundMusic {
-    draw() {
-        
-    }
-}

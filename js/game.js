@@ -4,16 +4,12 @@ class Game {
         this.player2 = new Player2()
         this.background = new Background() 
         this.obstacles = []
-        // this.backgroundMusicMP.getOutputVolume(0.2)
-        // this.backgroundMusicMP.play()
 
     }
-
     constructor() {
         this.backgroundImages 
         this.coinImage 
     }
-    
     preload() {
         this.backgroundImages = [
             {src: loadImage("..//assents/background/Layer0.png"), x: 0, speed: 2},
@@ -31,38 +27,28 @@ class Game {
         this.playerOneImage = loadImage("..//assents/player/JumpChicken.png"),
         this.playerTwoImage = loadImage("..//assents/player/FallChicken.png"),
         this.coinImage = loadImage("..//assents/coins/Beer.png"), 
-        this.backgroundMusicMP = loadSound("..//assents/music/BackgroundMusic.mp3")
+        this.drinkingSound = loadSound("..//assents/music/Drinking.mp3")
     }
-
     draw() {
         clear()
         this.background.draw() 
         this.player1.draw()
-        
         this.player2.draw()
-
-        // here we add coins to the obstacle array 
-        // frameCount - this is provides by p5
         if (frameCount % 80 === 0) {
             this.obstacles.push(new Obstacle(this.coinImage))
-            // creating new obsticale and pushing it in the array 
-            //  console.log("new Coin")
             console.log(this.obstacles)
         }
-        // iterate over the obstales array and call the draw function for every obstacle inside 
-        // loop 
          this.obstacles.forEach(function(obstacle){
              obstacle.draw() 
         })
-        
-
         this.obstacles = this.obstacles.filter(obstacle => {
-            if (obstacle.collision(this.player2) || obstacle.collision(this.player1) || obstacle.y > 380) {
+            if (obstacle.collision(this.player2) || obstacle.collision(this.player1)) {
+                this.drinkingSound.play()
+            } else if (obstacle.y > 380){
                 return false 
-            } else {
-                return true 
+            } else{
+                return true
             }
         })
     }
-
 }

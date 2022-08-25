@@ -1,25 +1,24 @@
 const game = new Game(); 
-
+let backgroundMusicMP;
+let jumpSound;
 function preload() {
     game.preload();
+    backgroundMusicMP = loadSound("..//assents/music/BackgroundMusic.mp3")
+    jumpSound = loadSound("..//assents/music/Jump.mp3")
 }
-
 function setup() {
     createCanvas(1000, 450)
     game.setup()
+    // backgroundMusicMP.setVolumen(0.1)
+    backgroundMusicMP.play()
 }
-
 function draw() {
     game.draw() 
 }
-function music() {
-    game.music()
-}
-
 function keyPressed() {
     if(keyCode === 87){ 
-        // mkae the player jump 
-        game.player1.jump() 
+        jumpSound.play();
+        game.player1.jump()
     }; 
     if(keyCode === 65){
         console.log("move left")
@@ -30,8 +29,8 @@ function keyPressed() {
         game.player1.moveRight() 
     };
     if(keyCode === 38){ 
-        // mkae the player jump 
         game.player2.jump() 
+        jumpSound.play()
     }; 
     if(keyCode === 37){
         console.log("move left")
@@ -41,17 +40,5 @@ function keyPressed() {
         console.log("move right")
         game.player2.moveRight() 
     }
-
 }
-/*
-function mousePressed() {
-    if (song.isPlaying()) {
-      // .isPlaying() returns a boolean
-      song.pause(); // .play() will resume from .pause() position
-      background(255, 0, 0);
-    } else {
-      song.play();
-      background(0, 255, 0);
-    }
-  }
-  */
+
