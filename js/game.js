@@ -4,7 +4,9 @@ class Game {
         this.player2 = new Player2()
         this.background = new Background() 
         this.obstacles = []
-        this.backgroundMusic = new BackgroundMusic() 
+        // this.backgroundMusicMP.getOutputVolume(0.2)
+        // this.backgroundMusicMP.play()
+
     }
 
     constructor() {
@@ -29,7 +31,7 @@ class Game {
         this.playerOneImage = loadImage("..//assents/player/JumpChicken.png"),
         this.playerTwoImage = loadImage("..//assents/player/FallChicken.png"),
         this.coinImage = loadImage("..//assents/coins/Beer.png"), 
-        this.back
+        this.backgroundMusicMP = loadSound("..//assents/music/BackgroundMusic.mp3")
     }
 
     draw() {
@@ -41,7 +43,7 @@ class Game {
 
         // here we add coins to the obstacle array 
         // frameCount - this is provides by p5
-        if (frameCount % 150 === 0) {
+        if (frameCount % 80 === 0) {
             this.obstacles.push(new Obstacle(this.coinImage))
             // creating new obsticale and pushing it in the array 
             //  console.log("new Coin")
@@ -53,15 +55,9 @@ class Game {
              obstacle.draw() 
         })
         
+
         this.obstacles = this.obstacles.filter(obstacle => {
-            if (obstacle.collision(this.player1) || obstacle.x < 0) {
-                return false 
-            } else {
-                return true 
-            }
-        })
-        this.obstacles = this.obstacles.filter(obstacle => {
-            if (obstacle.collision(this.player2) || obstacle.y > 300) {
+            if (obstacle.collision(this.player2) || obstacle.collision(this.player1) || obstacle.y > 380) {
                 return false 
             } else {
                 return true 

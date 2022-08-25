@@ -5,7 +5,7 @@ class Player1 {
         this.gravity = 0.3
         this.width = 50
         this.height = 50
-        this.x = 100
+        this.x = 400
         this.y = 340
         this.y = height - this.height;
         
@@ -22,7 +22,7 @@ class Player1 {
         }
         // reset to his starting position 
         this.y = constrain(this.y, 0, 400)
-        this.x = constrain(this.x, 0, 550)
+        this.x = constrain(this.x, 0, 950)
         
 
         image(game.playerOneImage, this.x, this.y, this.width, this.height ) 

@@ -1,16 +1,12 @@
 const game = new Game(); 
 
-let song; 
 function preload() {
-    game.preload()
-    // song = loadSound('..//assents/music/BackgroundMusic.mp3')
-    // song = loadSound("..//assents/music/BackgroundMusic.mp3")
+    game.preload();
 }
 
 function setup() {
-    createCanvas(600, 400)
+    createCanvas(1000, 450)
     game.setup()
-    // song.loop()
 }
 
 function draw() {

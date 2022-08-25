@@ -5,7 +5,7 @@ class Player2 {
         this.gravity = 0.5
         this.width = 50
         this.height = 50
-        this.x = 400
+        this.x = 500
         this.y = 350
         this.y = height - this.height;
     }
@@ -20,8 +20,8 @@ class Player2 {
         this.y = height - this.height;
         }
         this.y = constrain(this.y, 0, 400)
-        this.x = constrain(this.x, 0, 550)
-        
+        this.x = constrain(this.x, 0, 950)
+
         image(game.playerTwoImage, this.x, this.y, this.width, this.height ) 
     }
 

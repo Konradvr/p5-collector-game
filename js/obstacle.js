@@ -1,7 +1,7 @@
 class Obstacle {
     constructor(image) {
         this.image = image 
-        this.x = (Math.random() * height) / 2
+        this.x = (Math.random() * width) 
         this.y = 0
         this.width = 30
         this.height = 30
