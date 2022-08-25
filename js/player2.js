@@ -29,4 +29,12 @@ class Player2 {
         // -10 weil es ja im negative bereich auf der y und x achse ist !! hab das letztes mal nicht bemerkt 
         // so how can he get on the ground again? 
     }
+
+    moveLeft() {
+        this.x -= 30 
+    }
+
+    moveRight() {
+        this.x += 30
+    }
 }

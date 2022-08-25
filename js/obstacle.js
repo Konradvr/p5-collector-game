@@ -2,9 +2,28 @@ class Obstacle {
     constructor(image) {
         this.image = image 
         this.x = 600
-        this.y = (Math.random() * height) 
+        this.y = (Math.random() * height) / 2
         this.width = 25
         this.height = 25
+    }
+
+    collision(playerInfo) {
+        console.log("collision", playerInfo)
+        // get the middle of the player 
+        const playerX = playerInfo.x + playerInfo.width / 2 
+        const playerY = playerInfo.y + playerInfo.height / 2 
+        // get the middle of obstacle 
+        const obstacleX = this.x + this.width / 2 
+        const obstacleY = this.y + this.height / 2
+        // measure the distance between obstacle and player
+        if(dist(obstacleX, obstacleY, playerX, playerY) > 25){
+            // this is not a collision 
+            return false 
+        } else {
+            // this is a collision 
+            // game.player1.score += 10 
+            return true 
+        }
     }
 
     draw() {
