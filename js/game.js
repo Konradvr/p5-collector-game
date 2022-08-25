@@ -3,10 +3,12 @@ class Game {
         this.player1 = new Player1() 
         this.player2 = new Player2()
         this.background = new Background() 
+        this.obstacles = []
     }
 
     constructor() {
         this.backgroundImages 
+        this.coinImage 
     }
     
     preload() {
@@ -24,14 +26,30 @@ class Game {
             {src: loadImage("..//assents/background/Layer10.png"),x: 0, speed: 2}
         ],
         this.playerOneImage = loadImage("..//assents/player/JumpChicken.png"),
-        this.playerTwoImage = loadImage("..//assents/player/FallChicken.png")
+        this.playerTwoImage = loadImage("..//assents/player/FallChicken.png"),
+        this.coinImage = loadImage("..//assents/coins/Beer.png")
     }
 
     draw() {
         clear()
         this.background.draw() 
         this.player1.draw()
+        
         this.player2.draw()
+
+        // here we add coins to the obstacle array 
+        // frameCount - this is provides by p5
+        if (frameCount % 180 === 0) {
+            this.obstacles.push(new Obstacle(this.coinImage))
+            // creating new obsticale and pushing it in the array 
+            //  console.log("new Coin")
+            console.log(this.obstacles)
+        }
+        // iterate over the obstales array and call the draw function for every obstacle inside 
+        // loop 
+         this.obstacles.forEach(function(obstacle){
+             obstacle.draw() 
+        })
     }
 
 }

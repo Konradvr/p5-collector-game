@@ -1,5 +1,6 @@
 class Player1 {
     constructor() {
+        this.score = 0; 
         this.velocity = 0
         this.gravity = 0.5
         this.width = 50
