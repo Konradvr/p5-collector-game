@@ -4,11 +4,12 @@ class Game {
         this.player2 = new Player2()
         this.background = new Background() 
         this.obstacles = []
-
     }
     constructor() {
         this.backgroundImages 
         this.coinImage 
+        this.hello = 0
+
     }
     preload() {
         this.backgroundImages = [
@@ -30,11 +31,11 @@ class Game {
         this.drinkingSound = loadSound("..//assents/music/Drinking.mp3")
     }
     draw() {
-        clear()
+        // clear()
         this.background.draw() 
         this.player1.draw()
         this.player2.draw()
-        if (frameCount % 80 === 0) {
+        if (frameCount % 60 === 0) {
             this.obstacles.push(new Obstacle(this.coinImage))
             console.log(this.obstacles)
         }
@@ -42,7 +43,7 @@ class Game {
              obstacle.draw() 
         })
         this.obstacles = this.obstacles.filter(obstacle => {
-            if (obstacle.collision(this.player2) || obstacle.collision(this.player1)) {
+            if (obstacle.collisionOne(this.player1)) {
                 this.drinkingSound.play()
             } else if (obstacle.y > 380){
                 return false 
@@ -50,5 +51,30 @@ class Game {
                 return true
             }
         })
+        this.obstacles = this.obstacles.filter(obstacle => {
+            if (obstacle.collisionTwo(this.player2)) {
+                this.drinkingSound.play()
+            } else if (obstacle.y > 380){
+                return false 
+            } else{
+                return true
+            }
+        })
+
+        // if(this.player1.score === 2){
+        //     clear()
+        //     text("Player ONE Won the Collecting Race!", width / 2, height / 2)
+        //     textAlign(CENTER)
+        //     textSize(20)
+        // } else if (this.player2.score === 2){
+        //     clear()
+        //     text("Player TWO Won the Collecting Race!", width / 2, height / 2)
+        //     textAlign(CENTER)
+        //     textSize(20)
+        // }
+
+        // if(this.hello){
+        //     main.reset()
+        // }
     }
 }

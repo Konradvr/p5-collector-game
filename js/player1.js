@@ -8,7 +8,6 @@ class Player1 {
         this.x = 400
         this.y = 340
         this.y = height - this.height;
-        
     }
     draw() {
         this.velocity += this.gravity

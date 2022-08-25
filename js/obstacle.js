@@ -6,9 +6,8 @@ class Obstacle {
         this.width = 30
         this.height = 30
     }
-
-    collision(playerInfo) {
-        console.log("collision", playerInfo)
+    collisionOne(playerInfo) {
+        // console.log("collisionOne", playerInfo)
         const playerX = playerInfo.x + playerInfo.width / 2 
         const playerY = playerInfo.y + playerInfo.height / 2 
         const obstacleX = this.x + this.width / 2 
@@ -16,7 +15,22 @@ class Obstacle {
         if(dist(obstacleX, obstacleY, playerX, playerY) > 25){
             return false 
         } else {
-            game.player1.score += 1
+            game.player1.score += 1 
+            // beide spieler eigene collision noch machen.. sonst ist der score bei beiden der selbe 
+            return true 
+        }
+    }
+    collisionTwo(playerInfo) {
+        // console.log("collisionTwo", playerInfo)
+        const playerX = playerInfo.x + playerInfo.width / 2 
+        const playerY = playerInfo.y + playerInfo.height / 2 
+        const obstacleX = this.x + this.width / 2 
+        const obstacleY = this.y + this.height / 2
+        if(dist(obstacleX, obstacleY, playerX, playerY) > 25){
+            return false 
+        } else {
+            game.player2.score += 1 
+            // beide spieler eigene collision noch machen.. sonst ist der score bei beiden der selbe 
             return true 
         }
     }
