@@ -4,13 +4,12 @@ class Game {
         this.player2 = new Player2()
         this.background = new Background() 
         this.obstacles = []
-        this.music = new Music() 
+        this.backgroundMusic = new BackgroundMusic() 
     }
 
     constructor() {
         this.backgroundImages 
         this.coinImage 
-        this.backgroundMusic
     }
     
     preload() {
@@ -29,9 +28,8 @@ class Game {
         ],
         this.playerOneImage = loadImage("..//assents/player/JumpChicken.png"),
         this.playerTwoImage = loadImage("..//assents/player/FallChicken.png"),
-        this.coinImage = loadImage("..//assents/coins/Beer.png"),
-        this.backgroundMusic = loadSound("")
-
+        this.coinImage = loadImage("..//assents/coins/Beer.png"), 
+        this.back
     }
 
     draw() {
@@ -56,7 +54,14 @@ class Game {
         })
         
         this.obstacles = this.obstacles.filter(obstacle => {
-            if (obstacle.collision(this.player1) || obstacle.collision(this.player2)) {
+            if (obstacle.collision(this.player1) || obstacle.x < 0) {
+                return false 
+            } else {
+                return true 
+            }
+        })
+        this.obstacles = this.obstacles.filter(obstacle => {
+            if (obstacle.collision(this.player2) || obstacle.y > 300) {
                 return false 
             } else {
                 return true 

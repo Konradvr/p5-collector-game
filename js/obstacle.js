@@ -1,10 +1,10 @@
 class Obstacle {
     constructor(image) {
         this.image = image 
-        this.x = 600
-        this.y = (Math.random() * height) / 2
-        this.width = 25
-        this.height = 25
+        this.x = (Math.random() * height) / 2
+        this.y = 0
+        this.width = 30
+        this.height = 30
     }
 
     collision(playerInfo) {
@@ -21,13 +21,13 @@ class Obstacle {
             return false 
         } else {
             // this is a collision 
-            // game.player1.score += 10 
+            game.player1.score += 1
             return true 
         }
     }
 
     draw() {
-        this.x --
+        this.y ++
         image(this.image, this.x, this.y, this.width, this.height)
     }
 

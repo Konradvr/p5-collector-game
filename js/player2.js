@@ -1,5 +1,6 @@
 class Player2 {
     constructor() {
+        this.score = 0 
         this.velocity = 0
         this.gravity = 0.5
         this.width = 50
@@ -18,6 +19,9 @@ class Player2 {
         // reset to his starting position 
         this.y = height - this.height;
         }
+        this.y = constrain(this.y, 0, 400)
+        this.x = constrain(this.x, 0, 550)
+        
         image(game.playerTwoImage, this.x, this.y, this.width, this.height ) 
     }
 
