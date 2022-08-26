@@ -3,7 +3,7 @@ class Game {
         this.player1 = new Player1() 
         this.player2 = new Player2()
         this.background = new Background() 
-        this.obstacles = []
+        this.coins = []
     }
     constructor() {
         this.backgroundImages 
@@ -36,25 +36,25 @@ class Game {
         this.player1.draw()
         this.player2.draw()
         if (frameCount % 60 === 0) {
-            this.obstacles.push(new Obstacle(this.coinImage))
-            console.log(this.obstacles)
+            this.coins.push(new Coin(this.coinImage))
+            console.log(this.coins)
         }
-         this.obstacles.forEach(function(obstacle){
-             obstacle.draw() 
+         this.coins.forEach(function(coin){
+             coin.draw() 
         })
-        this.obstacles = this.obstacles.filter(obstacle => {
-            if (obstacle.collisionOne(this.player1)) {
+        this.coins = this.coins.filter(coin => {
+            if (coin.collisionOne(this.player1)) {
                 this.drinkingSound.play()
-            } else if (obstacle.y > 380){
+            } else if (coin.y > 380){
                 return false 
             } else{
                 return true
             }
         })
-        this.obstacles = this.obstacles.filter(obstacle => {
-            if (obstacle.collisionTwo(this.player2)) {
+        this.coins = this.coins.filter(coin => {
+            if (coin.collisionTwo(this.player2)) {
                 this.drinkingSound.play()
-            } else if (obstacle.y > 380){
+            } else if (coin.y > 380){
                 return false 
             } else{
                 return true
