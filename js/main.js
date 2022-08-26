@@ -42,7 +42,7 @@ function draw() {
         // winSound.play()
         // noLoop()
         // image()
-    } else if (game.player2.score === 1){
+    } else if (game.player2.score === 10){
         clear()
         text("Player TWO Won the Collecting Race!", width / 2, height / 2)
         // textAlign(CENTER)
