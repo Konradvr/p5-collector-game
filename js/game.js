@@ -13,8 +13,8 @@ class Game {
     }
     preload() {
         this.backgroundImages = [
-            {src: loadImage("//assents/background/Layer0.png"), x: 0, speed: 2},
-            {src: loadImage("//assents/background/Layer1.png"), x: 0, speed: 2},
+            {src: loadImage("assents/background/Layer0.png"), x: 0, speed: 2},
+            {src: loadImage("assents/background/Layer1.png"), x: 0, speed: 2},
             {src: loadImage("/assents/background/Layer2.png"), x: 0, speed: 2},
             {src: loadImage("/assents/background/Layer3.png"), x: 0, speed: 2},
             {src: loadImage("/assents/background/Layer4.png"), x: 0, speed: 2},
