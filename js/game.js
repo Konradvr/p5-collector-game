@@ -35,6 +35,7 @@ class Game {
     }
     draw() {
         // clear()
+        
         this.background.draw() 
         this.player1.draw()
         this.player2.draw()
