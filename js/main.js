@@ -6,11 +6,11 @@ let winSoundTwo;
 let p1Win; 
 function preload() {
     game.preload();
-    backgroundMusicMP = loadSound("..//assents/music/BackgroundMusic.mp3")
-    jumpSound = loadSound("..//assents/music/Jump.mp3")
-    winSound = loadSound("..//assents/music/win.mp3")
-    winSoundTwo = loadSound("..//assents/music/win.mp3")
-    p1Win = loadImage("..//assents/PlayerWinPicture/P1.png")
+    backgroundMusicMP = loadSound("assents/music/BackgroundMusic.mp3")
+    jumpSound = loadSound("assents/music/Jump.mp3")
+    winSound = loadSound("assents/music/win.mp3")
+    winSoundTwo = loadSound("assents/music/win.mp3")
+    p1Win = loadImage("assents/PlayerWinPicture/P1.png")
 }
 function setup() {
     createCanvas(1000, 450)
