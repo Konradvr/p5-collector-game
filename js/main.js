@@ -4,15 +4,20 @@ let jumpSound;
 let winSound; 
 let winSoundTwo; 
 let p1Win; 
+let pOneWin; 
 let p2Win;
+let pTwoWin; 
 function preload() {
     game.preload();
     backgroundMusicMP = loadSound("assents/music/BackgroundMusic.mp3")
     jumpSound = loadSound("assents/music/Jump.mp3")
     winSound = loadSound("assents/music/win.mp3")
     winSoundTwo = loadSound("assents/music/win.mp3")
-    p1Win = loadImage("assents/PlayerWinPicture/p1.1.png")
-    p2Win = loadImage("assents/PlayerWinPicture/p2.png")
+    p1Win = loadImage("assents/PlayerWinPicture/p1.2.png")
+    p2Win = loadImage("assents/PlayerWinPicture/p2.1.png")
+    pOneWin = loadImage("assents/PlayerWinPicture/p1.1.png")
+    pTwoWin = loadImage("assents/PlayerWinPicture/p2.png")
+
 
 }
 function setup() {
@@ -29,20 +34,22 @@ function draw() {
         // textAlign(CENTER)
         // textSize(50)
         // fill("blue");
-        image(p1Win, 0, 0, 1000, 450)
+        image(p1Win, 550, 0, 400, 450)
+        image(pOneWin, 0, 80, 500, 300)
         backgroundMusicMP.stop()
         jumpSound.stop()
         game.drinkingSound.stop()
         // winSound.play()
         // noLoop()
         // image()
-    } else if (game.player2.score === 10){
-        // clear()
+    } else if (game.player2.score === 1){
+        clear()
         text("Player TWO Won the Collecting Race!", width / 2, height / 2)
         // textAlign(CENTER)
         // textSize(50)
         // fill("red")
-        image(p2Win, 0, 0, 1000, 450)
+        image(p2Win, 500, 75, 500, 300)
+        image(pTwoWin, 0, 80, 500, 300)
         backgroundMusicMP.stop()
         jumpSound.stop()
         game.drinkingSound.stop()
