@@ -3,13 +3,14 @@ let backgroundMusicMP;
 let jumpSound;
 let winSound; 
 let winSoundTwo; 
+let p1Win; 
 function preload() {
     game.preload();
     backgroundMusicMP = loadSound("..//assents/music/BackgroundMusic.mp3")
     jumpSound = loadSound("..//assents/music/Jump.mp3")
     winSound = loadSound("..//assents/music/win.mp3")
     winSoundTwo = loadSound("..//assents/music/win.mp3")
-
+    p1Win = loadImage("..//assents/PlayerWinPicture/P1.png")
 }
 function setup() {
     createCanvas(1000, 450)
@@ -21,20 +22,25 @@ function setup() {
 }
 function draw() {
     game.draw() 
-    if(game.player1.score === 10){
+    if(game.player1.score === 1){
         clear()
         text("Player ONE Won the Collecting Race!", width / 2, height / 2)
         textAlign(CENTER)
         textSize(50)
+        fill("blue");
+        
         backgroundMusicMP.stop()
         jumpSound.stop()
         game.drinkingSound.stop()
         // winSound.play()
+        // noLoop()
+        // image()
     } else if (game.player2.score === 10){
-        clear()
+        // clear()
         text("Player TWO Won the Collecting Race!", width / 2, height / 2)
         textAlign(CENTER)
         textSize(50)
+        fill("red")
         backgroundMusicMP.stop()
         jumpSound.stop()
         game.drinkingSound.stop()
