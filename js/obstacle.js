@@ -1,4 +1,4 @@
-class Obstacle {
+class Coin {
     constructor(image) {
         this.image = image 
         this.x = (Math.random() * width) 
@@ -10,9 +10,9 @@ class Obstacle {
         // console.log("collisionOne", playerInfo)
         const playerX = playerInfo.x + playerInfo.width / 2 
         const playerY = playerInfo.y + playerInfo.height / 2 
-        const obstacleX = this.x + this.width / 2 
-        const obstacleY = this.y + this.height / 2
-        if(dist(obstacleX, obstacleY, playerX, playerY) > 25){
+        const coinX = this.x + this.width / 2 
+        const coinY = this.y + this.height / 2
+        if(dist(coinX, coinY, playerX, playerY) > 25){
             return false 
         } else {
             game.player1.score += 1 
@@ -24,9 +24,9 @@ class Obstacle {
         // console.log("collisionTwo", playerInfo)
         const playerX = playerInfo.x + playerInfo.width / 2 
         const playerY = playerInfo.y + playerInfo.height / 2 
-        const obstacleX = this.x + this.width / 2 
-        const obstacleY = this.y + this.height / 2
-        if(dist(obstacleX, obstacleY, playerX, playerY) > 25){
+        const coinX = this.x + this.width / 2 
+        const coinY = this.y + this.height / 2
+        if(dist(coinX, coinY, playerX, playerY) > 25){
             return false 
         } else {
             game.player2.score += 1 
