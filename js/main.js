@@ -17,18 +17,15 @@ function setup() {
     game.setup()
     // backgroundMusicMP.setVolumen(0.1)
     backgroundMusicMP.play()
-
-
 }
 function draw() {
     game.draw() 
-    if(game.player1.score === 1){
+    if(game.player1.score === 10){
         clear()
         text("Player ONE Won the Collecting Race!", width / 2, height / 2)
         textAlign(CENTER)
         textSize(50)
         fill("blue");
-        
         backgroundMusicMP.stop()
         jumpSound.stop()
         game.drinkingSound.stop()
