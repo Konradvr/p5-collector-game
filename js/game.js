@@ -15,20 +15,20 @@ class Game {
         this.backgroundImages = [
             {src: loadImage("assents/background/Layer0.png"), x: 0, speed: 2},
             {src: loadImage("assents/background/Layer1.png"), x: 0, speed: 2},
-            {src: loadImage("/assents/background/Layer2.png"), x: 0, speed: 2},
-            {src: loadImage("/assents/background/Layer3.png"), x: 0, speed: 2},
-            {src: loadImage("/assents/background/Layer4.png"), x: 0, speed: 2},
-            {src: loadImage("/assents/background/Layer5.png"), x: 0, speed: 2},
-            {src: loadImage("/assents/background/Layer6.png"), x: 0, speed: 2},
-            {src: loadImage("/assents/background/Layer7.png"), x: 0, speed: 2},
-            {src: loadImage("/assents/background/Layer8.png"), x: 0, speed: 2},
-            {src: loadImage("/assents/background/Layer9.png"), x: 0, speed: 2},
-            {src: loadImage("/assents/background/Layer10.png"),x: 0, speed: 2}
+            {src: loadImage("assents/background/Layer2.png"), x: 0, speed: 2},
+            {src: loadImage("assents/background/Layer3.png"), x: 0, speed: 2},
+            {src: loadImage("assents/background/Layer4.png"), x: 0, speed: 2},
+            {src: loadImage("assents/background/Layer5.png"), x: 0, speed: 2},
+            {src: loadImage("assents/background/Layer6.png"), x: 0, speed: 2},
+            {src: loadImage("assents/background/Layer7.png"), x: 0, speed: 2},
+            {src: loadImage("assents/background/Layer8.png"), x: 0, speed: 2},
+            {src: loadImage("assents/background/Layer9.png"), x: 0, speed: 2},
+            {src: loadImage("assents/background/Layer10.png"),x: 0, speed: 2}
         ],
-        this.playerOneImage = loadImage("..//assents/player/JumpChicken.png"),
-        this.playerTwoImage = loadImage("..//assents/player/FallChicken.png"),
-        this.coinImage = loadImage("..//assents/coins/Beer.png"), 
-        this.drinkingSound = loadSound("..//assents/music/Drinking.mp3")
+        this.playerOneImage = loadImage("assents/player/JumpChicken.png"),
+        this.playerTwoImage = loadImage("assents/player/FallChicken.png"),
+        this.coinImage = loadImage("assents/coins/Beer.png"), 
+        this.drinkingSound = loadSound("assents/music/Drinking.mp3")
     }
     draw() {
         // clear()
